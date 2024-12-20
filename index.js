@@ -8,58 +8,68 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    res.render("index");
-})
+  res.render("index");
+});
 
 app.post("/", async (req, res) => {
+  const { name, inconveniente } = req.body;
 
-    const {name, inconveniente} = req.body;
+  const auth = new google.auth.GoogleAuth({
+    keyFile: "credentials.json",
+    scopes: "https://www.googleapis.com/auth/spreadsheets",
+  });
 
+  //crear cliente para auth
+  const client = await auth.getClient();
 
+  const googleSheets = google.sheets({ version: "v4", auth: client });
 
-    const auth = new google.auth.GoogleAuth({
-        keyFile: "credentials.json",
-        scopes: "https://www.googleapis.com/auth/spreadsheets"
-    });
+  const spreadsheetId = "1BcikDwGx7vnLsu0qtYJZABvZjYCRsBdupFM_qVDrGE8";
 
-    //crear cliente para auth
-    const client = await auth.getClient();
+  //get metadata
 
-    const googleSheets = google.sheets({version: "v4", auth: client});
+  const metaData = await googleSheets.spreadsheets.get({
+    auth,
+    spreadsheetId,
+  });
 
-    const spreadsheetId = "1BcikDwGx7vnLsu0qtYJZABvZjYCRsBdupFM_qVDrGE8"
+  // Read rows from spreadsheet
 
-    //get metadata
+  const getRows = await googleSheets.spreadsheets.values.get({
+    auth,
+    spreadsheetId,
+    range: "Tickets",
+  });
 
-    const metaData = await googleSheets.spreadsheets.get({
-        auth,
-        spreadsheetId
-    })
+  //write row(s) to spreadsheet
 
-    // Read rows from spreadsheet
+  const date = new Date();
 
-    const getRows = await googleSheets.spreadsheets.values.get({
-        auth,
-        spreadsheetId,
-        range: "Tickets"
-    })
+  const [hour, minutes, seconds] = [
+    date.getHours(),
+    date.getMinutes(),
+    date.getSeconds(),
+  ];
 
-    //write row(s) to spreadsheet
+  const [day, month, year] = [
+    date.getDate(),
+    date.getMonth(),
+    date.getFullYear(),
+  ];
 
-    googleSheets.spreadsheets.values.append({
-        auth,
-        spreadsheetId,
-        range: "Tickets!A10:F",
-        valueInputOption: "USER_ENTERED",
-        resource: {
-            values: [
-                [name, inconveniente, "hola", "joni"]
-            ]
-        }
-    })
+  const fecha = `${day}/${month}/${year} ${hour}:${minutes}:${seconds}`
+
+  googleSheets.spreadsheets.values.append({
+    auth,
+    spreadsheetId,
+    range: "Tickets!B5",
+    valueInputOption: "USER_ENTERED",
+    resource: {
+      values: [[name, inconveniente, fecha , "joni"]],
+    },
+  });
 
   res.send("Enviado correctamente");
-
 });
 
 app.listen(1337, (req, res) => console.log("running localhost:1337"));
