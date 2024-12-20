@@ -78,6 +78,10 @@ app.use("/", main);
 //   res.send("Enviado correctamente");
 // });
 
+const ghpages = require('gh-pages');
+
+ghpages.publish('dist', function(err) {});
+
 app.listen(3001, () => {
   console.log("Servidor funcionando en http://localhost:3001");
 });
