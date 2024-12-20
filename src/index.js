@@ -1,6 +1,7 @@
 const express = require("express");
 const { google } = require("googleapis");
 const app = express();
+const ghpages = require('gh-pages');
 
 app.use(express.static("public"));
 
@@ -78,9 +79,9 @@ app.use("/", main);
 //   res.send("Enviado correctamente");
 // });
 
-// const ghpages = require('gh-pages');
 
-// ghpages.publish('dist', function(err) {});
+
+ghpages.publish('dist', function(err) {});
 
 app.listen(3001, () => {
   console.log("Servidor funcionando en http://localhost:3001");
