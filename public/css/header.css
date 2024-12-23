@@ -1,5 +1,7 @@
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -9,7 +11,8 @@ a {
 
 header {
   display: flex;
-  height: 75px;
+  min-height: 75px;
+  align-items: center;
   justify-content: space-between;
   background: linear-gradient(
     90deg,
@@ -18,7 +21,7 @@ header {
     rgba(252, 176, 69, 1) 100%
   );
   align-items: center;
-  padding: 15px;
+  padding: 2rem;
 }
 
 .logo {
@@ -27,7 +30,7 @@ header {
 }
 
 .logo img {
-  height: 70px;
+  height: 90px;
   margin-right: 10px;
 }
 
@@ -36,19 +39,37 @@ header {
   font-size: 30px;
 }
 
-nav a {
+nav {
+  display: flex;
+}
+
+.list {
+  display: flex;
   font-family: "Roboto", serif;
   font-weight: 600;
   font-size: 30px;
-  padding-right: 20px;
+  padding-right: 40px;
+  gap: 1rem;
+  list-style: none;
 }
 
 nav a:hover {
   color: white;
 }
 
-.abrir-menu {
+#abrir,
+#cerrar {
   display: none;
+  visibility: hidden;
+  font-size: 1.5rem;
+}
+
+.fondo {
+  display: flex;
+}
+
+hr {
+  visibility: hidden;
 }
 
 @media (max-width: 769px) {
@@ -56,19 +77,63 @@ nav a:hover {
     font-size: 20px;
   }
 
-  .logo img{
+  hr {
+    visibility: visible;
+  }
+
+  .logo img {
     height: 50px;
   }
 
-  nav a {
-    display: none;
+  .list {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: larger;
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: end;
+    /* padding: 1.2rem; */
+    gap: 1.2rem;
+    bottom: 0;
+    background-color: #72269b;
+    width: 12.5rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
   }
 
-  .abrir-menu {
-    display: block;
+  .list.visible {
+    visibility: visible;
+    opacity: 1;
   }
+
+
 
   header {
     height: 50px;
+  }
+
+  #abrir {
+    display: block;
+    visibility: visible;
+    background: none;
+    border: none;
+  }
+
+  #cerrar {
+    display: block;
+    visibility: visible;
+    font-size: 40px;
+    padding: 10px;
+  }
+
+  .fondo {
+    flex-direction: column;
+    align-items: end;
+    width: 10rem;
+    gap: 1rem;
   }
 }
