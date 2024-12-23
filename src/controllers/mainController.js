@@ -13,11 +13,11 @@ const controlador = {
 
     await enviarDatos(req)
 
-    return res.redirect("/home")
+    return res.redirect("/enviado")
     
   },
-  home: (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../views/home.html"));
+  enviado: (req, res) => {
+    res.render(path.resolve(__dirname, "../views/enviado.ejs"));
   },
 };
 

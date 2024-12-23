@@ -7,6 +7,6 @@ const mainController = require("../controllers/mainController");
 router.get("/", mainController.index);
 router.post("/", mainController.processSend)
 
-router.get("/home", mainController.home);
+router.get("/enviado", mainController.enviado);
 
 module.exports = router;

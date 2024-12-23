@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <%- include('./partials/head.ejs') %>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
     <h1>Soporte Tecnico</h1>
 
     <form action="" method="POST">
-        <div>
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre">
-        </div>
+      <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" />
+      </div>
 
-        <div>
-            <label for="usuario">Usuario</label>
-            <input type="text" id="usuario" name="usuario">
-        </div>
+      <div>
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" />
+      </div>
 
-        <div>
-            <label for="inconveniente">Descripcion del inconveniente</label>
-            <input type="text" id="inconveniente" name="inconveniente"></input>
-        </div>
+      <div>
+        <label for="inconveniente">Descripcion del inconveniente</label>
+        <input type="text" id="inconveniente" name="inconveniente" />
+      </div>
 
-        <button type="submit">Enviar</button>
-
+      <button type="submit">Enviar</button>
     </form>
-</body>
+  </body>
 </html>
