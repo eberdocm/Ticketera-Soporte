@@ -4,15 +4,28 @@
     <h2 class="nombre-compania">Soporte Técnico</h2>
   </a>
 
-  <nav>
-    <i class="bi bi-list" id="abrir"></i>
+  <input type="checkbox" id="abrir" />
+  <div class="container-menu">
+    <div class="cont-menu">
+      <nav>
+        <a href="#">Asistencia</a>
+        <a href="#">Staff</a>
+        <a href="#">Instructivos</a>
+      </nav>
+      <label for="abrir" class="bi bi-x cerrar"></label>
+    </div>
+  </div>
+
+  <nav class="nav-pc">
+    <label for="abrir" class="bi bi-list abrir"></label>
     <div class="list" id="list">
-      <i class="bi bi-x" id="cerrar"></i>
       <a href="" class="nav-link">Asistencia</a>
       <a href="" class="nav-link">Staff</a>
       <a href="" class="nav-link">Instructivos</a>
     </div>
   </nav>
+
+  <!-- menu hamburguesa -->
 </header>
 
 <script src="/js/header.js"></script>
