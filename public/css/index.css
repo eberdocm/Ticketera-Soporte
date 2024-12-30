@@ -1,0 +1,52 @@
+body {
+  background-color: rgb(235, 177, 68, 0.1) !important;
+  margin: 0rem 2rem !important;
+}
+
+.encabezado {
+  text-align: center;
+  margin: 8rem 1rem 1rem 1rem;
+}
+
+.encabezado h3 {
+  margin-top: 1rem;
+  font-size: medium;
+  
+}
+
+.formulario {
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px rgb(0, 0, 0, 0.5) solid;
+  border-radius: 20px;
+  background-color: rgb(235, 177, 68);
+}
+
+.formulario h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  text-decoration-line: underline;
+}
+
+.form-floating > label {
+  left: auto !important;
+}
+
+input {
+    border: 2px rgb(0, 0, 0, 0.5) solid!important ;
+}
+
+i {
+    padding: 0 0.5rem;
+    font-size: 25px;
+}
+
+@media (max-width: 768px) {
+  .encabezado {
+    margin: 6rem 1rem 1rem 1rem;
+  }
+
+  body {
+    margin: 0rem !important;
+  }
+}

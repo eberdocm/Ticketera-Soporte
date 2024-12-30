@@ -12,19 +12,17 @@ a {
   color: black;
 }
 
-header {
-  display: flex;
-  min-height: 75px;
-  align-items: center;
-  justify-content: space-between;
+nav {
   background: linear-gradient(
     90deg,
     rgba(131, 58, 180, 1) 0%,
     rgba(253, 29, 29, 1) 50%,
     rgba(252, 176, 69, 1) 100%
   );
-  align-items: center;
-  padding: 2rem;
+}
+
+header {
+  margin-bottom: 106px;
 }
 
 .logo {
@@ -40,10 +38,15 @@ header {
 .nombre-compania {
   color: #000;
   font-size: 30px;
+  text-decoration-line: underline;
 }
 
 .nav-pc {
   display: flex;
+}
+
+.navbar-expand-md .offcanvas .offcanvas-body {
+  flex-direction: row-reverse;
 }
 
 .list {
@@ -54,6 +57,7 @@ header {
   padding-right: 40px;
   gap: 1rem;
   list-style: none;
+  align-items: end;
 }
 
 .list a:hover {
@@ -78,9 +82,11 @@ header {
   display: none;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .nombre-compania {
     font-size: 20px;
+    text-decoration: none;
+    text-decoration-line: underline;
   }
 
   .list {
@@ -130,7 +136,7 @@ header {
   }
 
   #abrir:checked ~ .container-menu .cont-menu {
-    transform: translateX(0%)
+    transform: translateX(0%);
   }
 
   .cont-menu nav {
@@ -143,8 +149,8 @@ header {
     padding: 20px;
     color: #c7c7c7;
     border-left: 5px solid transparent;
-    border-top: 1px solid #777 ;
-    border-bottom: 1px solid #777 ;
+    border-top: 1px solid #777;
+    border-bottom: 1px solid #777;
     transition: all 400ms ease;
   }
 
@@ -159,5 +165,27 @@ header {
     color: #fff;
     cursor: pointer;
     font-size: 40px;
+  }
+
+  .nav-item {
+    border-top: 1px solid #777;
+    border-bottom: 1px solid #777;
+    width: 100%;
+    text-align: right;
+  }
+  .offcanvas-end {
+    width: 250px !important;
+  }
+
+  header {
+    margin-bottom: 66px;
+  }
+
+  .offcanvas-header {
+    background-color: rgb(235, 177, 68, 0.5);
+  }
+
+  .navbar-expand-md .offcanvas .offcanvas-body {
+    background-color: rgb(235, 177, 68, 0.5);
   }
 }

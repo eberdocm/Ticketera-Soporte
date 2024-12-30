@@ -1,11 +1,11 @@
 <header>
-  <a href="/" class="logo">
+  <!-- <a href="/" class="logo">
     <img src="/img/logo-negativo.png" alt="logo-negativo" />
     <h2 class="nombre-compania">Soporte Técnico</h2>
-  </a>
+  </a> -->
 
-  <input type="checkbox" id="abrir" />
-  <div class="container-menu">
+  <!-- <input type="checkbox" id="abrir" /> -->
+  <!-- <div class="container-menu">
     <div class="cont-menu">
       <nav>
         <a href="#">Asistencia</a>
@@ -14,14 +14,67 @@
       </nav>
       <label for="abrir" class="bi bi-x cerrar"></label>
     </div>
-  </div>
+  </div> -->
 
-  <nav class="nav-pc">
+  <!-- <nav class="nav-pc">
     <label for="abrir" class="bi bi-list abrir"></label>
     <div class="list" id="list">
       <a href="" class="nav-link">Asistencia</a>
       <a href="" class="nav-link">Staff</a>
       <a href="" class="nav-link">Instructivos</a>
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-md fixed-top">
+    <div class="container-fluid">
+      <a href="/" class="logo">
+        <img src="/img/logo-negativo.png" alt="logo-negativo" />
+        <h2 class="nombre-compania">Soporte Técnico</h2>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="offcanvas offcanvas-end ancho"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+        <div class="offcanvas-header">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 list">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Asistencia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">Instructivos</a>
+            </li>
+          </ul>
+
+          <!-- <div class="list" id="list">
+            <a href="" class="nav-link">Asistencia</a>
+            <a href="" class="nav-link">Staff</a>
+            <a href="" class="nav-link">Instructivos</a>
+          </div> -->
+        </div>
+      </div>
     </div>
   </nav>
 
