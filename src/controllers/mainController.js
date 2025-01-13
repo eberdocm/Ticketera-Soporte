@@ -22,7 +22,7 @@ const controlador = {
 };
 
 async function enviarDatos(req, res) {
-  const { nombre, usuario, inconveniente } = req.body;
+  const { nombre, apellido, documento, telefono, campana } = req.body;
 
   const auth = new google.auth.GoogleAuth({
     keyFile: "credentials.json",
@@ -57,7 +57,7 @@ async function enviarDatos(req, res) {
     range: "Tickets!A2",
     valueInputOption: "USER_ENTERED",
     resource: {
-      values: [[fecha, nombre, usuario, inconveniente]],
+      values: [[fecha, nombre, apellido, documento, telefono, campana]],
     },
   });
 

@@ -11,7 +11,6 @@ body {
 .encabezado h3 {
   margin-top: 1rem;
   font-size: medium;
-  
 }
 
 .formulario {
@@ -33,12 +32,16 @@ body {
 }
 
 input {
-    border: 2px rgb(0, 0, 0, 0.5) solid!important ;
+  border: 2px rgb(0, 0, 0, 0.5) solid !important ;
+}
+
+select {
+  border: 2px rgb(0, 0, 0, 0.6) solid !important ;
 }
 
 i {
-    padding: 0 0.5rem;
-    font-size: 25px;
+  padding: 0 0.5rem;
+  font-size: 25px;
 }
 
 @media (max-width: 768px) {

@@ -16,7 +16,8 @@
     <div class="encabezado">
       <h1>Asistencia</h1>
       <h3>
-        Necesita ayuda? Ponte en contacto con nosotros y aguarda a ser atendido
+        Necesita ayuda? Ponte en contacto con nuestro equipo y aguarda a ser
+        atendido. Gracias!
       </h3>
     </div>
 
@@ -31,8 +32,12 @@
               id="nombre"
               name="nombre"
               placeholder="Nombre"
+              required
             />
             <label for="nombre">Nombre</label>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
           </div>
 
           <div class="form-floating mb-3 col-md">
@@ -69,6 +74,8 @@
           </div>
         </div>
 
+        
+
         <!-- <div class="form-floating">
           <input
             type="password"
@@ -84,16 +91,87 @@
           <input type="text" id="nombre" name="nombre" />
         </div> -->
 
-        <div>
+        <!-- <div>
           <label for="inconveniente">Descripcion del inconveniente</label>
           <input type="text" id="inconveniente" name="inconveniente" />
+        </div> -->
+
+        <div class="row">
+          <div class="form-floating mb-4 col-md">
+            <input
+              type="text"
+              class="form-control"
+              id="usuario"
+              name="usuario"
+              placeholder="Usuario"
+            />
+            <label for="usuario">Usuario</label>
+          </div>
+
+          <div class="input-group mb-4 col-md">
+            <div class="form-floating">
+              <select
+                class="form-select"
+                id="campana"
+                name="campana"
+                aria-label="Floating label select example"
+              >
+                <option selected disabled>Seleccionar</option>
+                <optgroup label="Personal">
+                  <option value="Ventas">Ventas</option>
+                  <option value="Retencion">Retención</option>
+                  <option value="Premium">Premium</option>
+                </optgroup>
+              </select>
+              <label for="campana">Campaña</label>
+            </div>
+
+            <div class="form-floating">
+              <select
+                class="form-select"
+                id="turno"
+                name="turno"
+                aria-label="Floating label select example"
+              >
+                <option selected disabled>Seleccionar</option>
+
+                <option value="Mañana">Mañana</option>
+                <option value="Tarde">Tarde</option>
+                <option value="Noche">Noche</option>
+              </select>
+              <label for="turno">Turno</label>
+            </div>
+          </div>
+
+          <div class="form-floating mb-4 col-md">
+            <input
+              type="text"
+              class="form-control"
+              id="superior"
+              name="superior"
+              placeholder="Superior a cargo"
+            />
+            <label for="superior">Superior a cargo</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-floating mb-4 col-md mail ">
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Dirección de Email"
+            />
+            <label for="email">Dirección de Email</label>
+          </div>
         </div>
 
         <hr />
 
         <h3><i class="fa-solid fa-handshake-angle"></i>Inconveniente</h3>
       </section>
-
       <button type="submit">Enviar</button>
     </form>
   </body>
