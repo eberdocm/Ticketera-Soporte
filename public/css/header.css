@@ -19,6 +19,8 @@ nav {
     rgba(253, 29, 29, 1) 50%,
     rgba(252, 176, 69, 1) 100%
   );
+
+  box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.75), 0px 0px 17px 0px rgba(0,0,0,0.75)
 }
 
 header {
@@ -51,7 +53,6 @@ header {
 
 .list {
   display: flex;
-  font-family: "Roboto", serif;
   font-weight: 600;
   font-size: 30px;
   padding-right: 40px;
@@ -181,11 +182,9 @@ header {
     margin-bottom: 66px;
   }
 
-  .offcanvas-header {
-    background-color: rgb(235, 177, 68, 0.5);
+  .offcanvas {
+    background-color: rgb(235, 177, 68)!important;
+    box-shadow: inset 10px 0px 27px 0px rgba(0,0,0,0.62);
   }
 
-  .navbar-expand-md .offcanvas .offcanvas-body {
-    background-color: rgb(235, 177, 68, 0.5);
-  }
 }

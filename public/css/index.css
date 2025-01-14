@@ -19,6 +19,7 @@ body {
   border: 2px rgb(0, 0, 0, 0.5) solid;
   border-radius: 20px;
   background-color: rgb(235, 177, 68);
+  box-shadow: inset 0px 0px 80px -40px rgba(0,0,0,0.62), 0px 0px 80px -40px rgba(0,0,0,0.62);
 }
 
 .formulario h3 {
@@ -42,6 +43,14 @@ select {
 i {
   padding: 0 0.5rem;
   font-size: 25px;
+}
+
+.input-group-text {
+  border: 2px rgb(0, 0, 0, 0.5) solid !important;
+}
+
+textarea {
+  border: 2px rgb(0, 0, 0, 0.5) solid !important;
 }
 
 @media (max-width: 768px) {
