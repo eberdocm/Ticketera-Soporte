@@ -71,6 +71,10 @@ textarea {
   -webkit-text-stroke: 0.5px black;
 }
 
+.invalid {
+  border: 3px red solid!important;
+}
+
 @media (max-width: 768px) {
   .encabezado {
     margin: 6rem 1rem 1rem 1rem;
