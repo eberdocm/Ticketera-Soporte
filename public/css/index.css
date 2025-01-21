@@ -75,6 +75,15 @@ textarea {
   border: 3px red solid!important;
 }
 
+.prueba {
+  display: none;
+}
+
+
+.invalid-feedback {
+  margin-left: 5px;
+  font-weight: bold;
+}
 @media (max-width: 768px) {
   .encabezado {
     margin: 6rem 1rem 1rem 1rem;

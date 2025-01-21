@@ -2,24 +2,60 @@ window.addEventListener("load", function () {
   let form = document.querySelector(".form");
 
   const expresiones = {
-	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^.{4,12}$/, // 4 a 12 digitos.
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
-}
-
+    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    password: /^.{4,12}$/, // 4 a 12 digitos.
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    telefono: /^\d{10}$/, // 10 numeros.
+    documento: /^\d{8}$/, // 8 numeros.
+    usuario: /^.{4,7}$/, // 7 caracteres
+  };
 
   form.addEventListener("submit", function (event) {
-    // event.preventDefault();
+    event.preventDefault();
     console.log("enviar formulario");
-    
-// form.nombre.value == ""
+
+    // form.nombre.value == ""
     if (!expresiones.nombre.test(form.nombre.value)) {
       form.nombre.classList.add("invalid", "is-invalid");
       event.preventDefault();
     } else {
-        form.nombre.classList.remove("invalid", "is-invalid")
+      form.nombre.classList.remove("invalid", "is-invalid");
+    }
+
+    if (!expresiones.nombre.test(form.apellido.value)) {
+      form.apellido.classList.add("invalid", "is-invalid");
+      event.preventDefault();
+    } else {
+      form.apellido.classList.remove("invalid", "is-invalid");
+    }
+
+    if (!expresiones.documento.test(form.documento.value)) {
+      form.documento.classList.add("invalid", "is-invalid");
+      event.preventDefault();
+    } else {
+      form.documento.classList.remove("invalid", "is-invalid");
+    }
+
+    if (!expresiones.telefono.test(form.telefono.value)) {
+      form.telefono.classList.add("invalid", "is-invalid");
+      event.preventDefault();
+    } else {
+      form.telefono.classList.remove("invalid", "is-invalid");
+    }
+
+    if (!expresiones.usuario.test(form.usuario.value)) {
+      form.usuario.classList.add("invalid", "is-invalid");
+      event.preventDefault();
+    } else {
+      form.usuario.classList.remove("invalid", "is-invalid");
+    }
+
+    if ((form.campana.value === "0")) {
+      form.campana.classList.add("invalid", "is-invalid");
+      event.preventDefault();
+    } else {
+      form.campana.classList.remove("invalid", "is-invalid");
     }
   });
 
