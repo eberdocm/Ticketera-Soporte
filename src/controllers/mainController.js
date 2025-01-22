@@ -10,11 +10,8 @@ const controlador = {
     res.render(path.resolve(__dirname, "../views/index.ejs"));
   },
   processSend: async (req, res) => {
-
-    await enviarDatos(req)
-
-    return res.redirect("/enviado")
-    
+    await enviarDatos(req);
+    return res.redirect("/enviado");
   },
   enviado: (req, res) => {
     res.render(path.resolve(__dirname, "../views/enviado.ejs"));
@@ -22,8 +19,23 @@ const controlador = {
 };
 
 async function enviarDatos(req, res) {
-  const { nombre, apellido, documento, telefono, campana } = req.body;
-
+  const {
+    nombre,
+    apellido,
+    documento,
+    telefono,
+    usuario,
+    campana,
+    turno,
+    superior,
+    email,
+    motivo,
+    ubicacion,
+    anydesk,
+    puesto,
+    comentario,
+  } = req.body;
+  const libre = "";
   const auth = new google.auth.GoogleAuth({
     keyFile: "credentials.json",
     scopes: "https://www.googleapis.com/auth/spreadsheets",
@@ -57,7 +69,27 @@ async function enviarDatos(req, res) {
     range: "Tickets!A2",
     valueInputOption: "USER_ENTERED",
     resource: {
-      values: [[fecha, nombre, apellido, documento, telefono, campana]],
+      values: [
+        [
+          fecha,
+          libre,
+          libre,
+          ubicacion,
+          campana,
+          puesto,
+          motivo,
+          comentario,
+          anydesk,
+          telefono,
+          nombre,
+          apellido,
+          documento,
+          usuario,
+          email,
+          superior,
+          turno,
+        ],
+      ],
     },
   });
 

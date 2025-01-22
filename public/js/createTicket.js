@@ -1,5 +1,6 @@
 window.addEventListener("load", function () {
   let form = document.querySelector(".form");
+  let box = document.querySelector(".box");
 
   const expresiones = {
     usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -8,11 +9,12 @@ window.addEventListener("load", function () {
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     telefono: /^\d{10}$/, // 10 numeros.
     documento: /^\d{8}$/, // 8 numeros.
+    anydesk: /^\d{9,10}$/, // 8 numeros.
+    box: /^\d{4}$/, // 4 numeros.
     usuario: /^.{4,7}$/, // 7 caracteres
   };
 
   form.addEventListener("submit", function (event) {
-    event.preventDefault();
     console.log("enviar formulario");
 
     // form.nombre.value == ""
@@ -51,12 +53,79 @@ window.addEventListener("load", function () {
       form.usuario.classList.remove("invalid", "is-invalid");
     }
 
-    if ((form.campana.value === "0")) {
-      form.campana.classList.add("invalid", "is-invalid");
+    if (form.campana.value === "0") {
+      form.campana.classList.add("invalid");
       event.preventDefault();
     } else {
-      form.campana.classList.remove("invalid", "is-invalid");
+      form.campana.classList.remove("invalid");
     }
+
+    if (form.turno.value === "0") {
+      form.turno.classList.add("invalid");
+      event.preventDefault();
+    } else {
+      form.turno.classList.remove("invalid");
+    }
+
+    if (!expresiones.nombre.test(form.superior.value)) {
+      form.superior.classList.add("invalid", "is-invalid");
+      event.preventDefault();
+    } else {
+      form.superior.classList.remove("invalid", "is-invalid");
+    }
+
+    if (!expresiones.correo.test(form.email.value)) {
+      form.email.classList.add("invalid", "is-invalid");
+      event.preventDefault();
+    } else {
+      form.email.classList.remove("invalid", "is-invalid");
+    }
+
+    if (form.motivo.value === "0") {
+      form.motivo.classList.add("invalid");
+      event.preventDefault();
+    } else {
+      form.motivo.classList.remove("invalid");
+    }
+
+    if (form.ubicacion.value === "0") {
+      form.ubicacion.classList.add("invalid");
+      event.preventDefault();
+    } else {
+      form.ubicacion.classList.remove("invalid");
+    }
+
+    if (form.ubicacion.value === "Home Office") {
+      if (!expresiones.anydesk.test(form.anydesk.value)) {
+        form.anydesk.classList.add("invalid", "is-invalid");
+        form.puesto.classList.remove("invalid", "is-invalid");
+        box.classList.remove("invalid");
+
+        event.preventDefault();
+      } else {
+        form.anydesk.classList.remove("invalid", "is-invalid");
+      }
+    } else if (form.ubicacion.value !== "0") {
+      if (!expresiones.box.test(form.puesto.value)) {
+        form.puesto.classList.add("invalid", "is-invalid");
+        box.classList.add("invalid");
+        form.anydesk.classList.remove("invalid", "is-invalid");
+
+        event.preventDefault();
+      } else {
+        form.puesto.classList.remove("invalid", "is-invalid");
+        box.classList.remove("invalid");
+      }
+    }
+
+    if (form.comentario.value === '') {
+      form.comentario.classList.add("invalid", "is-invalid");
+      event.preventDefault();
+    } else {
+      form.comentario.classList.remove("invalid", "is-invalid");
+    }
+
+
   });
 
   // let form = document.querySelector(".form");

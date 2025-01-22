@@ -60,7 +60,7 @@
             />
             <label for="documento">Documento</label>
             <div class="invalid-feedback">
-              Ingrese un numero de documento válido (8 números)
+              Ingrese un número de documento válido (8 números)
             </div>
           </div>
 
@@ -75,7 +75,7 @@
             />
             <label for="telefono">Nro de telefono</label>
             <div class="invalid-feedback">
-              Ingrese un numero de telefono válido (10 números)
+              Ingrese un número de telefono válido (10 números)
             </div>
           </div>
         </div>
@@ -90,9 +90,7 @@
               placeholder="Usuario"
             />
             <label for="usuario">Usuario</label>
-            <div class="invalid-feedback">
-              Ingrese un usuario válido
-            </div>
+            <div class="invalid-feedback">Ingrese un usuario válido</div>
           </div>
 
           <div class="input-group mb-4 col-md">
@@ -110,6 +108,7 @@
                   <option value="Premium">Premium</option>
                 </optgroup>
                 <optgroup label="Otras">
+                  <option value="Telecentro">Telecentro</option>
                   <option value="Clarin 365">Clarin 365</option>
                   <option value="Retencion Clarin 365">
                     Retencion Clarin 365
@@ -119,9 +118,6 @@
                 </optgroup>
               </select>
               <label for="campana">Campaña</label>
-              <div class="invalid-feedback">
-                Ingrese una campaña
-              </div>
             </div>
 
             <div class="form-floating">
@@ -131,7 +127,7 @@
                 name="turno"
                 aria-label="Floating label select example"
               >
-                <option selected disabled>Seleccionar...</option>
+                <option selected disabled value="0">Seleccionar...</option>
 
                 <option value="Mañana">Mañana</option>
                 <option value="Tarde">Tarde</option>
@@ -150,11 +146,12 @@
               placeholder="Superior a cargo"
             />
             <label for="superior">Superior a cargo</label>
+            <div class="invalid-feedback">Ingrese su superior</div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="form-floating mb-4 col-md">
+        <div class="row mail">
+          <div class="form-floating mb-4 col-md email">
             <input
               type="text"
               class="form-control"
@@ -163,6 +160,7 @@
               placeholder="Dirección de Email"
             />
             <label for="email">Dirección de Email</label>
+            <div class="invalid-feedback">Ingrese un mail válido</div>
           </div>
         </div>
 
@@ -181,7 +179,7 @@
               name="motivo"
               aria-label="Floating label select example"
             >
-              <option selected disabled>Seleccionar...</option>
+              <option selected disabled value="0">Seleccionar...</option>
               <option value="Mañana">Mañana</option>
               <option value="Tarde">Tarde</option>
               <option value="Noche">Noche</option>
@@ -197,7 +195,7 @@
               name="ubicacion"
               aria-label="Floating label select example"
             >
-              <option selected disabled>Seleccionar...</option>
+              <option selected disabled value="0">Seleccionar...</option>
               <option value="Home Office">Home Office</option>
               <option value="In-Site 129 4to">In-Site 129 4to</option>
               <option value="In-Site 141 1ro ABAJO">
@@ -225,10 +223,13 @@
               disabled
             />
             <label for="anydesk">Nro de Anydesk</label>
+            <div class="invalid-feedback">
+              Ingrese número de anydesk válido (9 o 10 números)
+            </div>
           </div>
 
           <div class="input-group col-md mb-4">
-            <span class="input-group-text">BOX</span>
+            <span class="input-group-text box">BOX</span>
             <div class="form-floating">
               <input
                 type="text"
@@ -240,6 +241,9 @@
                 disabled
               />
               <label for="puesto">Nro de Puesto</label>
+              <div class="invalid-feedback">
+                Ingrese el número de box (4 números)
+              </div>
             </div>
           </div>
         </div>
@@ -254,6 +258,9 @@
             name="comentario"
             rows="3"
           ></textarea>
+          <div class="invalid-feedback">
+            Cuentanos un poco acerca del Inconveniente
+          </div>
         </div>
         <button type="submit" class="btn btn-success">Enviar</button>
       </section>
