@@ -50,9 +50,9 @@ async function enviarDatos(req, res) {
   const date = new Date();
 
   const [hour, minutes, seconds] = [
-    date.getHours(),
-    date.getMinutes(),
-    date.getSeconds(),
+    date.getHours().toString().padStart(2, '0'),
+    date.getMinutes().toString().padStart(2, '0'),
+    date.getSeconds().toString().padStart(2, '0'),
   ];
 
   const [day, month, year] = [
@@ -61,7 +61,7 @@ async function enviarDatos(req, res) {
     date.getFullYear(),
   ];
 
-  const fecha = `${day}/${month}/${year} ${hour}:${minutes}:${seconds}`;
+  const fecha = `${day}/${month}/${year} ${hour-3}:${minutes}:${seconds}`;
 
   googleSheets.spreadsheets.values.append({
     auth,
@@ -92,7 +92,8 @@ async function enviarDatos(req, res) {
       ],
     },
   });
-
+  console.log(fecha);
+  
   return true;
 }
 
