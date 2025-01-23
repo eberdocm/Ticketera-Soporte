@@ -1,4 +1,3 @@
-const { log } = require("console");
 const express = require("express");
 const { google } = require("googleapis");
 
@@ -6,7 +5,6 @@ const path = require("path");
 
 const controlador = {
   index: (req, res) => {
-    // console.log(await autenticacion(req));
     res.render(path.resolve(__dirname, "../views/index.ejs"));
   },
   processSend: async (req, res) => {
@@ -50,9 +48,9 @@ async function enviarDatos(req, res) {
   const date = new Date();
 
   const [hour, minutes, seconds] = [
-    date.getHours().toString().padStart(2, '0'),
-    date.getMinutes().toString().padStart(2, '0'),
-    date.getSeconds().toString().padStart(2, '0'),
+    date.getHours().toString().padStart(2, "0"),
+    date.getMinutes().toString().padStart(2, "0"),
+    date.getSeconds().toString().padStart(2, "0"),
   ];
 
   const [day, month, year] = [
@@ -61,7 +59,7 @@ async function enviarDatos(req, res) {
     date.getFullYear(),
   ];
 
-  const fecha = `${day}/${month}/${year} ${hour-3}:${minutes}:${seconds}`;
+  const fecha = `${day}/${month}/${year} ${hour - 3}:${minutes}:${seconds}`;
 
   googleSheets.spreadsheets.values.append({
     auth,
@@ -92,8 +90,6 @@ async function enviarDatos(req, res) {
       ],
     },
   });
-  console.log(fecha);
-  
   return true;
 }
 

@@ -3,268 +3,269 @@
   <head>
     <%- include('./partials/head.ejs') %>
     <link rel="stylesheet" href="/css/index.css" />
-    <title>Soporte</title>
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
-    <div class="encabezado">
-      <h1>Asistencia</h1>
-      <h3>
-        Necesita ayuda? Ponte en contacto con nuestro equipo y aguarda a ser
-        atendido. Gracias!
-      </h3>
-    </div>
+    <main>
+      <div class="encabezado">
+        <h1>Asistencia</h1>
+        <h3>
+          Necesita ayuda? Ponte en contacto con nuestro equipo y aguarda a ser
+          atendido. Gracias!
+        </h3>
+      </div>
 
-    <form
-      action=""
-      method="POST"
-      class="form needs-validation"
-      id="form"
-      novalidate
-    >
-      <section class="formulario">
-        <h3><i class="fa-solid fa-user"></i>Datos Personales</h3>
-        <div class="row">
-          <div class="form-floating mb-3 col-md">
-            <input
-              type="text"
-              class="form-control"
-              id="nombre"
-              name="nombre"
-              placeholder="Nombre"
-            />
-            <label for="nombre">Nombre</label>
-            <div class="invalid-feedback">Ingrese su nombre</div>
-          </div>
+      <form
+        action=""
+        method="POST"
+        class="form needs-validation"
+        id="form"
+        novalidate
+      >
+        <section class="formulario">
+          <h3><i class="fa-solid fa-user"></i>Datos Personales</h3>
+          <div class="row">
+            <div class="form-floating mb-3 col-md">
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre"
+              />
+              <label for="nombre">Nombre</label>
+              <div class="invalid-feedback">Ingrese su nombre</div>
+            </div>
 
-          <div class="form-floating mb-3 col-md">
-            <input
-              type="text"
-              class="form-control"
-              id="apellido"
-              name="apellido"
-              placeholder="apellido"
-            />
-            <label for="apellido">Apellido</label>
-            <div class="invalid-feedback">Ingrese su apellido</div>
-          </div>
+            <div class="form-floating mb-3 col-md">
+              <input
+                type="text"
+                class="form-control"
+                id="apellido"
+                name="apellido"
+                placeholder="apellido"
+              />
+              <label for="apellido">Apellido</label>
+              <div class="invalid-feedback">Ingrese su apellido</div>
+            </div>
 
-          <div class="form-floating mb-3 col-md">
-            <input
-              type="text"
-              class="form-control"
-              id="documento"
-              name="documento"
-              placeholder="documento"
-              maxlength="8"
-            />
-            <label for="documento">Documento</label>
-            <div class="invalid-feedback">
-              Ingrese un número de documento válido (8 números)
+            <div class="form-floating mb-3 col-md">
+              <input
+                type="text"
+                class="form-control"
+                id="documento"
+                name="documento"
+                placeholder="documento"
+                maxlength="8"
+              />
+              <label for="documento">Documento</label>
+              <div class="invalid-feedback">
+                Ingrese un número de documento válido (8 números)
+              </div>
+            </div>
+
+            <div class="form-floating mb-3 col-md">
+              <input
+                type="text"
+                class="form-control"
+                id="telefono"
+                name="telefono"
+                placeholder="telefono"
+                maxlength="10"
+              />
+              <label for="telefono">Nro de telefono</label>
+              <div class="invalid-feedback">
+                Ingrese un número de telefono válido (10 números)
+              </div>
             </div>
           </div>
 
-          <div class="form-floating mb-3 col-md">
-            <input
-              type="text"
-              class="form-control"
-              id="telefono"
-              name="telefono"
-              placeholder="telefono"
-              maxlength="10"
-            />
-            <label for="telefono">Nro de telefono</label>
-            <div class="invalid-feedback">
-              Ingrese un número de telefono válido (10 números)
+          <div class="row">
+            <div class="form-floating mb-4 col-md">
+              <input
+                type="text"
+                class="form-control"
+                id="usuario"
+                name="usuario"
+                placeholder="Usuario"
+              />
+              <label for="usuario">Usuario</label>
+              <div class="invalid-feedback">Ingrese un usuario válido</div>
+            </div>
+
+            <div class="input-group mb-4 col-md">
+              <div class="form-floating">
+                <select
+                  class="form-select"
+                  id="campana"
+                  name="campana"
+                  aria-label="Floating label select example"
+                >
+                  <option selected disabled value="0">Seleccionar...</option>
+                  <optgroup label="Personal">
+                    <option value="Ventas">Ventas</option>
+                    <option value="Retencion">Retención</option>
+                    <option value="Premium">Premium</option>
+                  </optgroup>
+                  <optgroup label="Otras">
+                    <option value="Telecentro">Telecentro</option>
+                    <option value="Clarin 365">Clarin 365</option>
+                    <option value="Retencion Clarin 365">
+                      Retencion Clarin 365
+                    </option>
+                    <option value="Pfizer">Pfizer</option>
+                    <option value="Zurich">Zurich</option>
+                  </optgroup>
+                </select>
+                <label for="campana">Campaña</label>
+              </div>
+
+              <div class="form-floating">
+                <select
+                  class="form-select"
+                  id="turno"
+                  name="turno"
+                  aria-label="Floating label select example"
+                >
+                  <option selected disabled value="0">Seleccionar...</option>
+
+                  <option value="Mañana">Mañana</option>
+                  <option value="Tarde">Tarde</option>
+                  <option value="Noche">Noche</option>
+                </select>
+                <label for="turno">Turno</label>
+              </div>
+            </div>
+
+            <div class="form-floating mb-4 col-md">
+              <input
+                type="text"
+                class="form-control"
+                id="superior"
+                name="superior"
+                placeholder="Superior a cargo"
+              />
+              <label for="superior">Superior a cargo</label>
+              <div class="invalid-feedback">Ingrese su superior</div>
             </div>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="form-floating mb-4 col-md">
-            <input
-              type="text"
-              class="form-control"
-              id="usuario"
-              name="usuario"
-              placeholder="Usuario"
-            />
-            <label for="usuario">Usuario</label>
-            <div class="invalid-feedback">Ingrese un usuario válido</div>
+          <div class="row mail">
+            <div class="form-floating mb-4 col-md email">
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Dirección de Email"
+              />
+              <label for="email">Dirección de Email</label>
+              <div class="invalid-feedback">Ingrese un mail válido</div>
+            </div>
           </div>
 
-          <div class="input-group mb-4 col-md">
-            <div class="form-floating">
+          <hr />
+
+          <!-- INCONVENIENTE -->
+
+          <h3><i class="fa-solid fa-handshake-angle"></i>Inconveniente</h3>
+
+          <div class="row">
+            <!-- MOTIVO -->
+            <div class="form-floating col-md mb-4">
               <select
                 class="form-select"
-                id="campana"
-                name="campana"
+                id="motivo"
+                name="motivo"
                 aria-label="Floating label select example"
               >
                 <option selected disabled value="0">Seleccionar...</option>
-                <optgroup label="Personal">
-                  <option value="Ventas">Ventas</option>
-                  <option value="Retencion">Retención</option>
-                  <option value="Premium">Premium</option>
-                </optgroup>
-                <optgroup label="Otras">
-                  <option value="Telecentro">Telecentro</option>
-                  <option value="Clarin 365">Clarin 365</option>
-                  <option value="Retencion Clarin 365">
-                    Retencion Clarin 365
-                  </option>
-                  <option value="Pfizer">Pfizer</option>
-                  <option value="Zurich">Zurich</option>
-                </optgroup>
-              </select>
-              <label for="campana">Campaña</label>
-            </div>
-
-            <div class="form-floating">
-              <select
-                class="form-select"
-                id="turno"
-                name="turno"
-                aria-label="Floating label select example"
-              >
-                <option selected disabled value="0">Seleccionar...</option>
-
                 <option value="Mañana">Mañana</option>
                 <option value="Tarde">Tarde</option>
                 <option value="Noche">Noche</option>
               </select>
-              <label for="turno">Turno</label>
+              <label for="motivo">Motivo de Solicitud</label>
+            </div>
+
+            <!-- UBICACION -->
+            <div class="form-floating col-md mb-4">
+              <select
+                class="form-select"
+                id="ubicacion"
+                name="ubicacion"
+                aria-label="Floating label select example"
+              >
+                <option selected disabled value="0">Seleccionar...</option>
+                <option value="Home Office">Home Office</option>
+                <option value="In-Site 129 4to">In-Site 129 4to</option>
+                <option value="In-Site 141 1ro ABAJO">
+                  In-Site 141 1ro ABAJO
+                </option>
+                <option value="In-Site 141 1ro ARRIBA">
+                  In-Site 141 1ro ARRIBA
+                </option>
+                <option value="In-Site 141 7mo">In-Site 141 7mo</option>
+              </select>
+              <label for="ubicacion">Modalidad / Ubicación</label>
             </div>
           </div>
 
-          <div class="form-floating mb-4 col-md">
-            <input
-              type="text"
-              class="form-control"
-              id="superior"
-              name="superior"
-              placeholder="Superior a cargo"
-            />
-            <label for="superior">Superior a cargo</label>
-            <div class="invalid-feedback">Ingrese su superior</div>
-          </div>
-        </div>
-
-        <div class="row mail">
-          <div class="form-floating mb-4 col-md email">
-            <input
-              type="text"
-              class="form-control"
-              id="email"
-              name="email"
-              placeholder="Dirección de Email"
-            />
-            <label for="email">Dirección de Email</label>
-            <div class="invalid-feedback">Ingrese un mail válido</div>
-          </div>
-        </div>
-
-        <hr />
-
-        <!-- INCONVENIENTE -->
-
-        <h3><i class="fa-solid fa-handshake-angle"></i>Inconveniente</h3>
-
-        <div class="row">
-          <!-- MOTIVO -->
-          <div class="form-floating col-md mb-4">
-            <select
-              class="form-select"
-              id="motivo"
-              name="motivo"
-              aria-label="Floating label select example"
-            >
-              <option selected disabled value="0">Seleccionar...</option>
-              <option value="Mañana">Mañana</option>
-              <option value="Tarde">Tarde</option>
-              <option value="Noche">Noche</option>
-            </select>
-            <label for="motivo">Motivo de Solicitud</label>
-          </div>
-
-          <!-- UBICACION -->
-          <div class="form-floating col-md mb-4">
-            <select
-              class="form-select"
-              id="ubicacion"
-              name="ubicacion"
-              aria-label="Floating label select example"
-            >
-              <option selected disabled value="0">Seleccionar...</option>
-              <option value="Home Office">Home Office</option>
-              <option value="In-Site 129 4to">In-Site 129 4to</option>
-              <option value="In-Site 141 1ro ABAJO">
-                In-Site 141 1ro ABAJO
-              </option>
-              <option value="In-Site 141 1ro ARRIBA">
-                In-Site 141 1ro ARRIBA
-              </option>
-              <option value="In-Site 141 7mo">In-Site 141 7mo</option>
-            </select>
-            <label for="ubicacion">Modalidad / Ubicación</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <!-- Anydesk -->
-          <div class="form-floating mb-4 col-md">
-            <input
-              type="text"
-              class="form-control"
-              id="anydesk"
-              name="anydesk"
-              placeholder="Nro de Anydesk"
-              maxlength="10"
-              disabled
-            />
-            <label for="anydesk">Nro de Anydesk</label>
-            <div class="invalid-feedback">
-              Ingrese número de anydesk válido (9 o 10 números)
-            </div>
-          </div>
-
-          <div class="input-group col-md mb-4">
-            <span class="input-group-text box">BOX</span>
-            <div class="form-floating">
+          <div class="row">
+            <!-- Anydesk -->
+            <div class="form-floating mb-4 col-md">
               <input
                 type="text"
                 class="form-control"
-                id="puesto"
-                name="puesto"
-                placeholder="Nro de Puesto"
-                maxlength="4"
+                id="anydesk"
+                name="anydesk"
+                placeholder="Nro de Anydesk"
+                maxlength="10"
                 disabled
               />
-              <label for="puesto">Nro de Puesto</label>
+              <label for="anydesk">Nro de Anydesk</label>
               <div class="invalid-feedback">
-                Ingrese el número de box (4 números)
+                Ingrese número de anydesk válido (9 o 10 números)
+              </div>
+            </div>
+
+            <div class="input-group col-md mb-4">
+              <span class="input-group-text box">BOX</span>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="puesto"
+                  name="puesto"
+                  placeholder="Nro de Puesto"
+                  maxlength="4"
+                  disabled
+                />
+                <label for="puesto">Nro de Puesto</label>
+                <div class="invalid-feedback">
+                  Ingrese el número de box (4 números)
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="mb-3">
-          <label for="comentario" class="form-label"
-            >Comentario: Describa brevemente el Inconveniente.</label
-          >
-          <textarea
-            class="form-control"
-            id="comentario"
-            name="comentario"
-            rows="3"
-          ></textarea>
-          <div class="invalid-feedback">
-            Cuentanos un poco acerca del Inconveniente
+          <div class="mb-3">
+            <label for="comentario" class="form-label"
+              >Comentario: Describa brevemente el Inconveniente.</label
+            >
+            <textarea
+              class="form-control"
+              id="comentario"
+              name="comentario"
+              rows="3"
+            ></textarea>
+            <div class="invalid-feedback">
+              Cuentanos un poco acerca del Inconveniente
+            </div>
           </div>
-        </div>
-        <button type="submit" class="btn btn-success">Enviar</button>
-      </section>
-    </form>
+          <button type="submit" class="btn btn-success enviar">Enviar</button>
+        </section>
+      </form>
+    </main>
   </body>
 
   <script src="/js/index.js"></script>

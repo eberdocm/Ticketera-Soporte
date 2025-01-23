@@ -22,8 +22,8 @@ nav {
 
   background-color: #e4e4e4;
 
-
-  box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75), 0px 0px 5px 0px rgba(0,0,0,0.75)
+  box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75),
+    0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 header {
@@ -33,17 +33,18 @@ header {
 .logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .logo img {
   height: 90px;
   margin-right: 10px;
+  margin-left: 20px;
 }
 
 .nombre-compania {
   color: #000;
   font-size: 30px;
-  text-decoration-line: underline;
 }
 
 .nav-pc {
@@ -52,6 +53,7 @@ header {
 
 .navbar-expand-md .offcanvas .offcanvas-body {
   flex-direction: row-reverse;
+  margin-right: 20px;
 }
 
 .list {
@@ -88,10 +90,12 @@ header {
 }
 
 @media (max-width: 768px) {
+  .navbar-expand-md .offcanvas .offcanvas-body {
+    margin-right: 0px;
+  }
   .nombre-compania {
     font-size: 20px;
     text-decoration: none;
-    text-decoration-line: underline;
   }
 
   .list {
@@ -187,8 +191,7 @@ header {
   }
 
   .offcanvas {
-    background-color: rgb(235, 177, 68)!important;
-    box-shadow: inset 10px 0px 27px 0px rgba(0,0,0,0.62);
+    background-color: rgb(235, 177, 68) !important;
+    box-shadow: inset 10px 0px 27px 0px rgba(0, 0, 0, 0.62);
   }
-
 }
