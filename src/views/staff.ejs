@@ -2,13 +2,13 @@
 <html lang="es">
   <head>
     <%- include('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/staff.css" />
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
     <main>
       <div class="encabezado">
-        <h1>Asistencia</h1>
+        <h1>Asistencia Staff</h1>
         <h4>
           Necesita ayuda? Ponte en contacto con nuestro equipo y aguarda a ser
           atendido. Gracias!
@@ -63,7 +63,9 @@
                 Ingrese un número de documento válido (8 números)
               </div>
             </div>
+          </div>
 
+          <div class="row">
             <div class="form-floating mb-3 col-md">
               <input
                 type="text"
@@ -78,80 +80,33 @@
                 Ingrese un número de telefono válido (10 números)
               </div>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="form-floating mb-4 col-md">
-              <input
-                type="text"
-                class="form-control"
-                id="usuario"
-                name="usuario"
-                placeholder="Usuario"
-              />
-              <label for="usuario">Usuario</label>
-              <div class="invalid-feedback">Ingrese un usuario válido</div>
-            </div>
-
-            <div class="input-group mb-4 col-md">
-              <div class="form-floating">
-                <select
-                  class="form-select"
-                  id="campana"
-                  name="campana"
-                  aria-label="Floating label select example"
-                >
-                  <option selected disabled value="0">Seleccionar...</option>
-                  <optgroup label="Personal">
-                    <option value="Ventas">Ventas</option>
-                    <option value="Retencion">Retención</option>
-                    <option value="Premium">Premium</option>
-                  </optgroup>
-                  <optgroup label="Otras">
-                    <option value="Telecentro">Telecentro</option>
-                    <option value="Clarin 365">Clarin 365</option>
-                    <option value="Retencion Clarin 365">
-                      Retencion Clarin 365
-                    </option>
-                    <option value="Pfizer">Pfizer</option>
-                    <option value="Zurich">Zurich</option>
-                  </optgroup>
-                </select>
-                <label for="campana">Campaña</label>
-              </div>
-
-              <div class="form-floating">
-                <select
-                  class="form-select"
-                  id="turno"
-                  name="turno"
-                  aria-label="Floating label select example"
-                >
-                  <option selected disabled value="0">Seleccionar...</option>
-
-                  <option value="Mañana">Mañana</option>
-                  <option value="Tarde">Tarde</option>
-                  <option value="Noche">Noche</option>
-                </select>
-                <label for="turno">Turno</label>
+            <div class="form-floating mb-3 col-md">
+              <select
+                class="form-select"
+                id="sector"
+                name="sector"
+                aria-label="Floating label select example"
+              >
+                <option selected disabled value="0">Seleccionar...</option>
+                <option value="Personal">Personal</option>
+                <option value="Telecentro">Telecentro</option>
+                <option value="Clarin 365">Clarin 365</option>
+                <option value="Retencion Clarin 365">
+                  Retencion Clarin 365
+                </option>
+                <option value="Pfizer">Pfizer</option>
+                <option value="Zurich">Zurich</option>
+                <option value="Recursos Humanos">Recursos Humanos</option>
+                <option value="Calidad">Calidad</option>
+              </select>
+              <label for="sector">Sector</label>
+              <div class="invalid-feedback">
+                Ingrese su sector
               </div>
             </div>
 
-            <div class="form-floating mb-4 col-md">
-              <input
-                type="text"
-                class="form-control"
-                id="superior"
-                name="superior"
-                placeholder="Superior a cargo"
-              />
-              <label for="superior">Superior a cargo</label>
-              <div class="invalid-feedback">Ingrese su superior</div>
-            </div>
-          </div>
-
-          <div class="row mail">
-            <div class="form-floating mb-4 col-md email">
+            <div class="form-floating mb-3 col-md email">
               <input
                 type="text"
                 class="form-control"
@@ -164,6 +119,8 @@
             </div>
           </div>
 
+          <div class="row mail"></div>
+
           <hr />
 
           <!-- INCONVENIENTE -->
@@ -171,24 +128,8 @@
           <h3><i class="fa-solid fa-handshake-angle"></i>Inconveniente</h3>
 
           <div class="row">
-            <!-- MOTIVO -->
-            <div class="form-floating col-md mb-4">
-              <select
-                class="form-select"
-                id="motivo"
-                name="motivo"
-                aria-label="Floating label select example"
-              >
-                <option selected disabled value="0">Seleccionar...</option>
-                <option value="Mañana">Mañana</option>
-                <option value="Tarde">Tarde</option>
-                <option value="Noche">Noche</option>
-              </select>
-              <label for="motivo">Motivo de Solicitud</label>
-            </div>
-
             <!-- UBICACION -->
-            <div class="form-floating col-md mb-4">
+            <div class="form-floating col-md mb-3">
               <select
                 class="form-select"
                 id="ubicacion"
@@ -207,12 +148,12 @@
                 <option value="In-Site 141 7mo">In-Site 141 7mo</option>
               </select>
               <label for="ubicacion">Modalidad / Ubicación</label>
+              <div class="invalid-feedback">
+                Ingrese su ubicacion
+              </div>
             </div>
-          </div>
-
-          <div class="row">
             <!-- Anydesk -->
-            <div class="form-floating mb-4 col-md">
+            <div class="form-floating mb-3 col-md">
               <input
                 type="text"
                 class="form-control"
@@ -225,25 +166,6 @@
               <label for="anydesk">Nro de Anydesk</label>
               <div class="invalid-feedback">
                 Ingrese número de anydesk válido (9 o 10 números)
-              </div>
-            </div>
-
-            <div class="input-group col-md mb-4">
-              <span class="input-group-text box">BOX</span>
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="puesto"
-                  name="puesto"
-                  placeholder="Nro de Puesto"
-                  maxlength="4"
-                  disabled
-                />
-                <label for="puesto">Nro de Puesto</label>
-                <div class="invalid-feedback">
-                  Ingrese el número de box (4 números)
-                </div>
               </div>
             </div>
           </div>
@@ -268,6 +190,6 @@
     </main>
   </body>
 
-  <script src="/js/index.js"></script>
-  <script src="/js/createTicket.js"></script>
+  <script src="/js/staff.js"></script>
+  <script src="/js/createStaffTicket.js"></script>
 </html>

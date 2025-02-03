@@ -48,32 +48,11 @@ window.addEventListener("load", function () {
       form.telefono.classList.remove("invalid", "is-invalid");
     }
 
-    if (!expresiones.usuario.test(form.usuario.value)) {
-      form.usuario.classList.add("invalid", "is-invalid");
+    if (form.sector.value === "0") {
+      form.sector.classList.add("invalid", "is-invalid");
       errores.push(1);
     } else {
-      form.usuario.classList.remove("invalid", "is-invalid");
-    }
-
-    if (form.campana.value === "0") {
-      form.campana.classList.add("invalid");
-      errores.push(1);
-    } else {
-      form.campana.classList.remove("invalid");
-    }
-
-    if (form.turno.value === "0") {
-      form.turno.classList.add("invalid");
-      errores.push(1);
-    } else {
-      form.turno.classList.remove("invalid");
-    }
-
-    if (!expresiones.nombre.test(form.superior.value)) {
-      form.superior.classList.add("invalid", "is-invalid");
-      errores.push(1);
-    } else {
-      form.superior.classList.remove("invalid", "is-invalid");
+      form.sector.classList.remove("invalid", "is-invalid");
     }
 
     if (!expresiones.correo.test(form.email.value)) {
@@ -83,40 +62,19 @@ window.addEventListener("load", function () {
       form.email.classList.remove("invalid", "is-invalid");
     }
 
-    if (form.motivo.value === "0") {
-      form.motivo.classList.add("invalid");
-      errores.push(1);
-    } else {
-      form.motivo.classList.remove("invalid");
-    }
-
     if (form.ubicacion.value === "0") {
-      form.ubicacion.classList.add("invalid");
+      form.ubicacion.classList.add("invalid", "is-invalid");
       errores.push(1);
     } else {
-      form.ubicacion.classList.remove("invalid");
+      form.ubicacion.classList.remove("invalid", "is-invalid");
     }
 
     if (form.ubicacion.value === "Home Office") {
       if (!expresiones.anydesk.test(form.anydesk.value)) {
         form.anydesk.classList.add("invalid", "is-invalid");
-        form.puesto.classList.remove("invalid", "is-invalid");
-        box.classList.remove("invalid");
-
         errores.push(1);
       } else {
         form.anydesk.classList.remove("invalid", "is-invalid");
-      }
-    } else if (form.ubicacion.value !== "0") {
-      if (!expresiones.box.test(form.puesto.value)) {
-        form.puesto.classList.add("invalid", "is-invalid");
-        box.classList.add("invalid");
-        form.anydesk.classList.remove("invalid", "is-invalid");
-
-        errores.push(1);
-      } else {
-        form.puesto.classList.remove("invalid", "is-invalid");
-        box.classList.remove("invalid");
       }
     }
 
@@ -133,7 +91,7 @@ window.addEventListener("load", function () {
       boton.classList.add("success");
       boton.disabled;
       boton.innerHTML =
-        '<i class="fa fa-spinner fa-spin cargando"></i> Cargando...';
+        '<i class="fa fa-spinner fa-spin cargando"></i> Enviando...';
     }
   });
 });

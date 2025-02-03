@@ -92,13 +92,6 @@ textarea {
   font-weight: bold;
 }
 
-.mail {
-  display: flex;
-  justify-content: center;
-}
-.email {
-  max-width: 56vh;
-}
 
 .box {
   height: 58px;
