@@ -127,6 +127,12 @@ textarea {
   }
 }
 
+@media (max-width: 1024px) {
+  .email {
+    max-width: none;
+  }
+}
+
 @media (max-width: 768px) {
   .encabezado {
     margin: 6rem 1rem 1rem 1rem;
@@ -138,4 +144,6 @@ textarea {
   .btn {
     width: 10rem;
   }
+
+  
 }

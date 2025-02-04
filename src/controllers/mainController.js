@@ -14,6 +14,24 @@ const controlador = {
   enviado: (req, res) => {
     res.render(path.resolve(__dirname, "../views/enviado.ejs"));
   },
+  login: (req, res) => {
+    res.render(path.resolve(__dirname, "../views/login.ejs"), {
+      errors: "",
+    });
+  },
+  processLogin: (req, res) => {
+    if (req.body.password !== "Soporte*123") {
+      res.render(path.resolve(__dirname, "../views/login.ejs"), {
+        errors: "Contraseña incorrecta",
+      });
+    } else {
+      res.cookie("logged", true, {
+        maxAge: 15000 * 60,
+        httpOnly: true,
+      });
+      return res.redirect("/");
+    }
+  },
   staff: (req, res) => {
     res.render(path.resolve(__dirname, "../views/staff.ejs"));
   },
@@ -159,7 +177,7 @@ async function enviarDatosStaff(req, res) {
           nombre,
           apellido,
           documento,
-          email
+          email,
         ],
       ],
     },
