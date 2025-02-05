@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('./partials/head.ejs') %>
-    <title>Enviado!</title>
-</head>
-<body>
+    <link rel="stylesheet" href="/css/enviado.css" />
+  </head>
+  <body>
     <%- include('./partials/header.ejs') %>
-    
-    <h1>Fomulario enviado. Gracias!!</h1>
-</body>
+    <div class="card">
+        <img src="/img/logo-horizontal.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Ticket enviado correctamente!</h5>
+          <p class="card-text">Les recordamos que pueden visitar los Instructivos :) Aguarde a ser atendido. <b>Gracias por la paciencia!</b></p>
+          <a href="#" class="btn btn-primary disabled">Instructivos (proximamente)</a>
+        </div>
+      </div>
+  </body>
 </html>

@@ -89,7 +89,7 @@ header {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .navbar-expand-md .offcanvas .offcanvas-body {
     margin-right: 0px;
   }
@@ -100,6 +100,8 @@ header {
 
   .list {
     display: none;
+    font-size: 1.5rem;
+    width: 240px;
   }
 
   .logo img {
@@ -178,7 +180,9 @@ header {
 
   .nav-item {
     border-top: 1px solid #777;
+    padding-right: 20px;
     border-bottom: 1px solid #777;
+    gap: 1rem;
     width: 100%;
     text-align: right;
   }
@@ -191,7 +195,13 @@ header {
   }
 
   .offcanvas {
-    background-color: rgb(235, 177, 68) !important;
+    /* background-color: rgb(235, 177, 68) !important; */
+    background: linear-gradient(
+    0deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
     box-shadow: inset 10px 0px 27px 0px rgba(0, 0, 0, 0.62);
   }
 }

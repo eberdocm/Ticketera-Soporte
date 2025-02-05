@@ -5,6 +5,8 @@ body {
     rgba(253, 29, 29, 1) 50%,
     rgba(252, 176, 69, 1) 100%
   );
+  background-attachment: fixed;
+
   margin: 0rem 2rem !important;
 }
 
