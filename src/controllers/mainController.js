@@ -84,7 +84,7 @@ async function enviarDatos(req, res) {
     date.getFullYear(),
   ];
 
-  const fecha = `${day}/${month}/${year} ${hour - 3}:${minutes}:${seconds}`;
+  const fecha = `${day}/${month + 1}/${year} ${hour - 3}:${minutes}:${seconds}`;
 
   googleSheets.spreadsheets.values.append({
     auth,
