@@ -39,6 +39,9 @@ const controlador = {
     await enviarDatosStaff(req);
     return res.redirect("/enviado");
   },
+  instructivos: (req, res) => {
+    res.render(path.resolve(__dirname, "../views/instructivos.ejs"));
+  },
 };
 
 async function enviarDatos(req, res) {

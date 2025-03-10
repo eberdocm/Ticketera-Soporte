@@ -1,0 +1,24 @@
+body {
+  background: linear-gradient(
+    0deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background-attachment: fixed;
+  margin: 0rem 2rem !important;
+}
+
+.card {
+  border: 2px rgb(0, 0, 0, 0.5) solid;
+  border-radius: 20px;
+  background-color: rgb(233, 235, 215);
+  box-shadow: inset 0px 0px 80px -40px rgba(0, 0, 0, 0.62),
+    0px 0px 80px -40px rgba(0, 0, 0, 0.62);
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 1rem auto !important;
+  }
+}

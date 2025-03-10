@@ -15,4 +15,6 @@ router.post("/staff", mainController.staffEnviado);
 
 router.get("/enviado", isLogged, mainController.enviado);
 
+router.get("/instructivos", isLogged, mainController.instructivos);
+
 module.exports = router;
