@@ -89,6 +89,10 @@ header {
   display: none;
 }
 
+.logo-menu{
+  display: none;
+}
+
 @media (max-width: 767px) {
   .navbar-expand-md .offcanvas .offcanvas-body {
     margin-right: 0px;
@@ -180,11 +184,18 @@ header {
 
   .nav-item {
     border-top: 1px solid #777;
-    padding-right: 20px;
+    /* padding-right: 20px; */
     border-bottom: 1px solid #777;
     gap: 1rem;
     width: 100%;
-    text-align: right;
+    text-align: center;
+    /* background-color: #777; */
+    /* border-radius: 20px; */
+    border: 2px rgb(0, 0, 0, 0.5) solid;
+    border-radius: 20px;
+    background-color: rgb(233, 235, 215);
+    box-shadow: inset 0px 0px 80px -40px rgba(0, 0, 0, 0.62),
+    0px 0px 80px -40px rgba(0, 0, 0, 0.62);
   }
   .offcanvas-end {
     width: 250px !important;
@@ -203,5 +214,10 @@ header {
     rgba(252, 176, 69, 1) 100%
   );
     box-shadow: inset 10px 0px 27px 0px rgba(0, 0, 0, 0.62);
+  }
+
+  .logo-menu{
+    display: block;
+    width: 5rem;
   }
 }
