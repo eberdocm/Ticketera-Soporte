@@ -31,14 +31,32 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 list">
-            <li class="nav-item">
+            <li class="nav-item head">
               <a class="nav-link" aria-current="page" href="/">Agentes</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item head">
               <a class="nav-link" href="/staff">Staff</a>
             </li>
-            <li class="nav-item">
-              <a href="/instructivos" class="nav-link">Instructivos</a>
+            <li class="nav-item head dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Instructivos
+              </a>
+              <ul class="dropdown-menu">
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/instructivos/personal">Personal Flow</a></li>
+                <li><a class="dropdown-item" href="/instructivos/telecentro">Telecentro</a></li>
+                <li><a class="dropdown-item" href="/instructivos/ventas">Clarin Ventas</a></li>
+                <li><a class="dropdown-item" href="/instructivos/reten">Clarin Retención</a></li>
+                <li><a class="dropdown-item" href="/instructivos/zurich">Zurich</a></li>
+                <li><a class="dropdown-item" href="/instructivos/pfizer">Pfizer</a></li>
+
+              </ul>
             </li>
           </ul>
         </div>

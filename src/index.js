@@ -13,8 +13,10 @@ app.use(express.urlencoded({ extended: true }));
 
 
 let main = require("./routers/main");
+let instructivos = require("./routers/instructivos");
 
 app.use("/", main);
+app.use("/instructivos", instructivos);
 
 app.listen(port, () => {
   console.log("Servidor funcionando en http://localhost:" + port);

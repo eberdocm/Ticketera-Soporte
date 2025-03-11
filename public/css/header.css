@@ -66,8 +66,13 @@ header {
   align-items: end;
 }
 
-.list a:hover {
-  color: white;
+/* .list a:hover {
+  color: rgb(112, 112, 112);
+  transition: all 300ms;
+} */
+
+a.nav-link:hover {
+  color: rgb(224, 60, 0);
   transition: all 300ms;
 }
 
@@ -89,7 +94,31 @@ header {
   display: none;
 }
 
-.logo-menu{
+.logo-menu {
+  display: none;
+}
+
+.dropdown-menu {
+  border: 0px !important;
+  background-color: #e4e4e4 !important;
+  /* box-shadow: inset 0px 0px 80px -40px rgba(0, 0, 0, 0.62),
+    0px 0px 80px -40px rgba(0, 0, 0, 0.62); */
+  width: 100%;
+}
+
+.dropdown-item {
+  color: black;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  /* text-align: center !important; */
+  padding-left: 35px !important;
+  --bs-dropdown-link-hover-color: none;
+  /* --bs-dropdown-link-hover-bg: rgb(245, 245, 245); */
+  --bs-dropdown-link-hover-bg: #828282;
+  transition: all 300ms;
+}
+
+.dropdown-divider {
   display: none;
 }
 
@@ -169,10 +198,6 @@ header {
     transition: all 400ms ease;
   }
 
-  .cont-menu nav a:hover {
-    border-left: 5px solid #c7c7c7;
-  }
-
   .cont-menu label {
     position: absolute;
     left: 15px;
@@ -184,18 +209,13 @@ header {
 
   .nav-item {
     border-top: 1px solid #777;
-    /* padding-right: 20px; */
     border-bottom: 1px solid #777;
     gap: 1rem;
     width: 100%;
     text-align: center;
-    /* background-color: #777; */
-    /* border-radius: 20px; */
     border: 2px rgb(0, 0, 0, 0.5) solid;
     border-radius: 20px;
-    background-color: rgb(233, 235, 215);
-    box-shadow: inset 0px 0px 80px -40px rgba(0, 0, 0, 0.62),
-    0px 0px 80px -40px rgba(0, 0, 0, 0.62);
+    background-color: #e4e4e4;
   }
   .offcanvas-end {
     width: 250px !important;
@@ -208,16 +228,27 @@ header {
   .offcanvas {
     /* background-color: rgb(235, 177, 68) !important; */
     background: linear-gradient(
-    0deg,
-    rgba(131, 58, 180, 1) 0%,
-    rgba(253, 29, 29, 1) 50%,
-    rgba(252, 176, 69, 1) 100%
-  );
+      0deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
     box-shadow: inset 10px 0px 27px 0px rgba(0, 0, 0, 0.62);
   }
 
-  .logo-menu{
+  .logo-menu {
     display: block;
     width: 5rem;
+  }
+
+  .dropdown-menu {
+    border-radius: 20px !important;
+    padding-top: 0px !important;
+  }
+
+  .dropdown-divider {
+    display: block;
+    padding: 0px !important;
+    margin: 0px !important;
   }
 }
