@@ -19,27 +19,12 @@ selectedUbicacion.addEventListener("change", () => {
 });
 
 selectedCampana.addEventListener("change", () => {
-  // if (
-  //   selectedCampana.value === "Ventas" ||
-  //   selectedCampana.value === "Retencion" ||
-  //   selectedCampana.value === "Premium"
-  // ) {
-  //   opciones.innerHTML =
-  //     '<option value="Mañana">Mañana</option>' +
-  //     '<option value="Tarde">Tarde</option>' +
-  //     '<option value="Noche">Noche</option>';
-  // } else {
-  //   opciones.innerHTML =
-  //     '<option value="Mañana">Hola</option>' +
-  //     '<option value="Tarde">Como</option>' +
-  //     '<option value="Noche">Estas</option>';
-  // }
 
   switch (selectedCampana.value) {
     case "Ventas":
     case "Retencion":
     case "Premium":
-      opciones.innerHTML =
+      inputMotivo.innerHTML =
         '<option value="Cambie de PC">Cambie de PC</option>' +
         '<option value="Carpeta Compartida">Carpeta Compartida</option>' +
         '<option value="Citrix">Citrix</option>' +
@@ -53,7 +38,7 @@ selectedCampana.addEventListener("change", () => {
         '<option value="Usuario Windows">Usuario Windows</option>';
       break;
     case "Telecentro":
-      opciones.innerHTML =
+      inputMotivo.innerHTML =
         '<option value="3CX">3CX</option>' +
         '<option value="Cambie de PC">Cambie de PC</option>' +
         '<option value="Carpeta Compartida">Carpeta Compartida</option>' +
@@ -66,7 +51,7 @@ selectedCampana.addEventListener("change", () => {
       break;
 
     case "Clarin 365":
-      opciones.innerHTML =
+      inputMotivo.innerHTML =
         '<option value="BotMaker">BotMaker</option>' +
         '<option value="Cambie de PC">Cambie de PC</option>' +
         '<option value="Carpeta Compartida">Carpeta Compartida</option>' +
@@ -82,7 +67,7 @@ selectedCampana.addEventListener("change", () => {
       break;
 
     case "Pfizer":
-      opciones.innerHTML =
+      inputMotivo.innerHTML =
         '<option value="Cambie de PC">Cambie de PC</option>' +
         '<option value="Carpeta Compartida">Carpeta Compartida</option>' +
         '<option value="CRM">CRM</option>' +
@@ -93,7 +78,7 @@ selectedCampana.addEventListener("change", () => {
       break;
 
     case "Zurich":
-      opciones.innerHTML =
+      inputMotivo.innerHTML =
         '<option value="Cambie de PC">Cambie de PC</option>' +
         '<option value="Carpeta Compartida">Carpeta Compartida</option>' +
         '<option value="CRM">CRM</option>' +
