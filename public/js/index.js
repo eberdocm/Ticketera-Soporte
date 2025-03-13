@@ -19,12 +19,12 @@ selectedUbicacion.addEventListener("change", () => {
 });
 
 selectedCampana.addEventListener("change", () => {
-
   switch (selectedCampana.value) {
     case "Ventas":
     case "Retencion":
     case "Premium":
       inputMotivo.innerHTML =
+        '<option selected disabled value="0">Seleccionar...</option>' +
         '<option value="Cambie de PC">Cambie de PC</option>' +
         '<option value="Carpeta Compartida">Carpeta Compartida</option>' +
         '<option value="Citrix">Citrix</option>' +
@@ -39,6 +39,7 @@ selectedCampana.addEventListener("change", () => {
       break;
     case "Telecentro":
       inputMotivo.innerHTML =
+        '<option selected disabled value="0">Seleccionar...</option>' +
         '<option value="3CX">3CX</option>' +
         '<option value="Cambie de PC">Cambie de PC</option>' +
         '<option value="Carpeta Compartida">Carpeta Compartida</option>' +
@@ -52,6 +53,7 @@ selectedCampana.addEventListener("change", () => {
 
     case "Clarin 365":
       inputMotivo.innerHTML =
+        '<option selected disabled value="0">Seleccionar...</option>' +
         '<option value="BotMaker">BotMaker</option>' +
         '<option value="Cambie de PC">Cambie de PC</option>' +
         '<option value="Carpeta Compartida">Carpeta Compartida</option>' +
@@ -68,6 +70,7 @@ selectedCampana.addEventListener("change", () => {
 
     case "Pfizer":
       inputMotivo.innerHTML =
+        '<option selected disabled value="0">Seleccionar...</option>' +
         '<option value="Cambie de PC">Cambie de PC</option>' +
         '<option value="Carpeta Compartida">Carpeta Compartida</option>' +
         '<option value="CRM">CRM</option>' +
@@ -79,6 +82,7 @@ selectedCampana.addEventListener("change", () => {
 
     case "Zurich":
       inputMotivo.innerHTML =
+        '<option selected disabled value="0">Seleccionar...</option>' +
         '<option value="Cambie de PC">Cambie de PC</option>' +
         '<option value="Carpeta Compartida">Carpeta Compartida</option>' +
         '<option value="CRM">CRM</option>' +
