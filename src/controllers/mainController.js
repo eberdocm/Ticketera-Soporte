@@ -62,6 +62,8 @@ async function enviarDatos(req, res) {
     comentario,
   } = req.body;
   const libre = "";
+  const comentarioFiltrado = comentario.replace(/(\r\n|\n|\r)/gm, ". ");
+
   const auth = new google.auth.GoogleAuth({
     keyFile: "credentials.json",
     scopes: "https://www.googleapis.com/auth/spreadsheets",
@@ -104,7 +106,7 @@ async function enviarDatos(req, res) {
           campana,
           puesto,
           motivo,
-          comentario,
+          comentarioFiltrado,
           anydesk,
           telefono,
           nombre,
@@ -159,6 +161,8 @@ async function enviarDatosStaff(req, res) {
     date.getFullYear(),
   ];
 
+  const comentarioFiltrado = comentario.replace(/(\r\n|\n|\r)/gm, ". ");
+
   const fecha = `${day}/${month + 1}/${year} ${hour - 3}:${minutes}:${seconds}`;
 
   googleSheets.spreadsheets.values.append({
@@ -174,7 +178,7 @@ async function enviarDatosStaff(req, res) {
           libre,
           ubicacion,
           sector,
-          comentario,
+          comentarioFiltrado,
           anydesk,
           telefono,
           nombre,
